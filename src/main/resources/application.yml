@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  datasource:
+    initialize: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console/
+flyway:
+  enabled: true
+  locations:
+  - classpath:db/migrations
+  sql-migration-prefix: SC          
