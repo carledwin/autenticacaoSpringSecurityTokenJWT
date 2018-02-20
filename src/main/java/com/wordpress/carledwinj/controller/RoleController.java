@@ -5,18 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wordpress.carledwinj.model.Usuario;
-import com.wordpress.carledwinj.repository.UsuarioRepository;
+import com.wordpress.carledwinj.model.Role;
+import com.wordpress.carledwinj.repository.RoleRepository;
 
 @RestController
-@RequestMapping("/usuario")
-public class UsuarioController {
+@RequestMapping("/role")
+public class RoleController {
 
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private RoleRepository roleRepository;
 	
 	@GetMapping("/todos")
-	public Iterable<Usuario> todos() {
-		return usuarioRepository.findAll();
+	public Iterable<Role> todos() {
+		return roleRepository.findAll();
 	}
 }

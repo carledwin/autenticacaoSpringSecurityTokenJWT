@@ -27,6 +27,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity
 					.authorizeRequests().antMatchers("/", "/home").permitAll()
 				.and()
+					.authorizeRequests().antMatchers("/perfil/**").permitAll()
+				.and()
+					.authorizeRequests().antMatchers("/role/**").permitAll()
+				.and()
 					.authorizeRequests().antMatchers("/h2-console/**").permitAll()
 				.and()
 					.authorizeRequests().antMatchers(HttpMethod.POST, "/novo-token").permitAll()
