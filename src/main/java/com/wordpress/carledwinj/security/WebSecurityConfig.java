@@ -23,17 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		/*http
-			.csrf().disable()
-			.authorizeRequests()
-				.antMatchers("/home").permitAll()
-				.antMatchers("/h2-console/*").permitAll()
-				.antMatchers(HttpMethod.POST, "/novo-token").permitAll()
-			.anyRequest().authenticated()
-		.and()
-			.addFilterBefore(new JWTLoginFilter("/novo-token", authenticationManager()), UsernamePasswordAuthenticationFilter.class)
-			.addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);*/
-		 
+	
 		httpSecurity
 					.authorizeRequests().antMatchers("/", "/home").permitAll()
 				.and()
@@ -53,11 +43,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		auth.inMemoryAuthentication()
-			.withUser("carl").password("senha123").roles("ADMIN");
-		/*auth.jdbcAuthentication()
+		auth.jdbcAuthentication()
 				.dataSource(dataSource)
-				.usersByUsernameQuery("SELECT username, password, enabled FROM usuario WHERE username=? ")
-				.authoritiesByUsernameQuery("SELECT username, role FROM perfil_roles WHERE username=? ");*/
+				.usersByUsernameQuery("SELECT username, password, enabled FROM usuario WHERE username=?")
+				.authoritiesByUsernameQuery("SELECT u.username, r.role FROM PERFIL_ROLES pr\n" + 
+						"INNER JOIN PERFIL p ON pr.PERFIS_ID = p.ID \n" + 
+						"INNER JOIN USUARIO u ON u.PERFIL_ID = p.ID\n" + 
+						"INNER JOIN ROLE r ON pr.ROLES_ID = r.id\n" + 
+						"WHERE u.username =?");
 	}
 }
