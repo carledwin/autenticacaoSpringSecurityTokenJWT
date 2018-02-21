@@ -17,30 +17,30 @@ INSERT INTO role(id, role) VALUES(7, 'ROLE_EXCLUSAO');
 
 
 /*PERFIL-ROLES-USUARIO*/
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(2, 5);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(2, 5);
 
 
 /*PERFIL-ROLES-ADMINSTRADOR*/
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(1, 1);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(1, 2);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(1, 1);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(1, 2);
 
 
 /*PERFIL-ROLES-DESENVOLVEDOR*/
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(3, 1);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(3, 2);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(3, 3);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(3, 4);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(3, 5);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(3, 6);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(3, 7);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(3, 1);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(3, 2);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(3, 3);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(3, 4);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(3, 5);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(3, 6);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(3, 7);
 
 /*PERFIL-ROLES-TESTER*/
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(4, 2);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(4, 3);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(4, 4);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(4, 5);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(4, 6);
-INSERT INTO perfil_roles(perfis_id, roles_id) VALUES(4, 7);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(4, 2);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(4, 3);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(4, 4);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(4, 5);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(4, 6);
+INSERT INTO role_perfis(perfis_id, roles_id) VALUES(4, 7);
 
 
 /*PERFIL-USUARIO*/

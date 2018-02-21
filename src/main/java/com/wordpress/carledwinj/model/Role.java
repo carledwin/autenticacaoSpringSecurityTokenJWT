@@ -1,7 +1,7 @@
 package com.wordpress.carledwinj.model;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -20,8 +20,8 @@ public class Role implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToMany(mappedBy = "roles")
-	private Set<Perfil> perfis;
+	@ManyToMany
+	private List<Perfil> perfis;
 	
 	@Enumerated(EnumType.STRING)
 	private RoleEnum role;
@@ -42,11 +42,11 @@ public class Role implements Serializable {
 		this.role = role;
 	}
 
-	public Set<Perfil> getPerfis() {
+	public List<Perfil> getPerfis() {
 		return perfis;
 	}
 
-	public void setPerfis(Set<Perfil> perfis) {
+	public void setPerfis(List<Perfil> perfis) {
 		this.perfis = perfis;
 	}
 

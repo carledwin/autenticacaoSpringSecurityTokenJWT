@@ -1,9 +1,10 @@
 package com.wordpress.carledwinj.model;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,11 +22,11 @@ public class Perfil implements Serializable {
 	
 	private String perfil;
 	
-	@ManyToMany
-	private Set<Role> roles;
+	@ManyToMany(mappedBy = "perfis", fetch=FetchType.EAGER)
+	private List<Role> roles;
 	
 	@OneToMany(mappedBy = "perfil")
-	private Set<Usuario> usuarios;
+	private List<Usuario> usuarios;
 
 	public Long getId() {
 		return id;
@@ -35,11 +36,11 @@ public class Perfil implements Serializable {
 		this.id = id;
 	}
 
-	public Set<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 
@@ -51,11 +52,11 @@ public class Perfil implements Serializable {
 		this.perfil = perfil;
 	}
 
-	public Set<Usuario> getUsuarios() {
+	public List<Usuario> getUsuarios() {
 		return usuarios;
 	}
 
-	public void setUsuarios(Set<Usuario> usuarios) {
+	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
 
